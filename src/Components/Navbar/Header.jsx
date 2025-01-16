@@ -1,32 +1,34 @@
 import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
-import { div, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
   const navigate = useNavigate();
   const location = useLocation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const closeModal = () => setIsModalOpen(false);
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    // Check if the pathname exactly matches "/partner-overview"
-    if (location.pathname === '/') {
-      setIsHeaderVisible(true)
-    } else {
-      setIsHeaderVisible(false)
-    }
-  }, [location.pathname])
+    // Show header only on the homepage
+    setIsHeaderVisible(location.pathname === "/");
+  }, [location.pathname]);
 
   return (
-    <div className={`text-white absolute top-0 w-full z-50`}>
-      <div className="max-w-screen-xl mx-auto p-2 px-14 flex items-center justify-between w-full">
+    <header
+      className={`absolute top-0 w-full z-50 ${
+        isHeaderVisible ? "bg-transparent" : "bg-white"
+      }`}
+    >
+      <div className="max-w-screen-xl mx-auto p-4 px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
@@ -34,40 +36,39 @@ const Header = () => {
             alt="Logo"
             width={80}
             height={30}
-            // className="w-auto h-10"
+            className="cursor-pointer"
+            onClick={() => navigate("/")}
           />
         </div>
 
-        {/* Desktop Navbar */}
-        <nav className={`hidden md:flex lg:flex xl:flex 2xl:flex ${isHeaderVisible?'text-white':'text-black'}`}>
+        {/* Navbar */}
+        <nav
+          className={`xsm:hidden sm:hidden flex gap-6 ${
+            isHeaderVisible ? "text-white" : "text-black"
+          }`}
+        >
           <div
-            className="hover:text-gray-400"
-            onClick={() => {
-              navigate("/");
-            }}
+            className="cursor-pointer hover:text-gray-400"
+            onClick={() => navigate("/")}
           >
             Home
           </div>
-          <div className="hover:text-gray-400">
-            Hotels
-          </div>
-          <div className="hover:text-gray-400">
-            Resorts
-          </div>
+          <div className="cursor-pointer hover:text-gray-400">Hotels</div>
+          <div className="cursor-pointer hover:text-gray-400">Resorts</div>
         </nav>
 
-        {/* Contact Us Button */}
-        <div className="hidden md:block lg:block xl:block 2xl:block ">
-          <div
+        {/* Login Button */}
+        <div className="xsm:hidden sm:hidden block">
+          <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-primary text-white px-4 py-2 rounded cursor-pointer"
+            className="bg-primary text-white px-4 py-2 rounded"
           >
             Login
-          </div>
+          </button>
         </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className="md:hidden lg:hidden xl:hidden 2xl:hidden flex items-center">
+        {/* Mobile Menu Button */}
+        <div className="hidden xsm:flex sm:flex">
           <button onClick={toggleMenu} className="text-white">
             <svg
               className="w-6 h-6"
@@ -89,35 +90,34 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden lg:hidden xl:hidden 2xl:hidden bg-black bg-opacity-50 text-white p-4">
-          <div href="#home" className="block py-2">
+        <div className="md:hidden bg-black bg-opacity-75 text-white p-4">
+          <div
+            className="py-2 cursor-pointer"
+            onClick={() => {
+              navigate("/");
+              setIsMenuOpen(false);
+            }}
+          >
             Home
           </div>
-          <div href="#hotels" className="block py-2">
-            Hotels
-          </div>
-          <div href="#rooms" className="block py-2">
-            Rooms
-          </div>
+          <div className="py-2 cursor-pointer">Hotels</div>
+          <div className="py-2 cursor-pointer">Resorts</div>
           <div
-            href="#contact"
-            className="block py-2 bg-primary text-white px-4 rounded"
+            className="py-2 bg-primary text-white px-4 rounded cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
           >
-            Contact Us
+            Login
           </div>
         </div>
       )}
+
+      {/* Modal */}
       {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          width="60%"
-          height="60%"
-        >
+        <Modal isOpen={isModalOpen} onClose={closeModal} width="60%" height="60%">
           <Login />
         </Modal>
       )}
-    </div>
+    </header>
   );
 };
 
