@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
 import Login from "../Login/Login";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { div, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navbar */}
-        <nav className={`hidden md:flex lg:flex xl:flex 2xl:flex space-x-6 ${isHeaderVisible?'text-white':'text-black'}`}>
+        <nav className={`hidden md:flex lg:flex xl:flex 2xl:flex ${isHeaderVisible?'text-white':'text-black'}`}>
           <div
             className="hover:text-gray-400"
             onClick={() => {
@@ -48,12 +48,12 @@ const Header = () => {
           >
             Home
           </div>
-          <Link href="/hotels" className="hover:text-gray-400">
+          <div className="hover:text-gray-400">
             Hotels
-          </Link>
-          <Link href="#rooms" className="hover:text-gray-400">
+          </div>
+          <div className="hover:text-gray-400">
             Resorts
-          </Link>
+          </div>
         </nav>
 
         {/* Contact Us Button */}
@@ -90,21 +90,21 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden lg:hidden xl:hidden 2xl:hidden bg-black bg-opacity-50 text-white p-4">
-          <Link href="#home" className="block py-2">
+          <div href="#home" className="block py-2">
             Home
-          </Link>
-          <Link href="#hotels" className="block py-2">
+          </div>
+          <div href="#hotels" className="block py-2">
             Hotels
-          </Link>
-          <Link href="#rooms" className="block py-2">
+          </div>
+          <div href="#rooms" className="block py-2">
             Rooms
-          </Link>
-          <Link
+          </div>
+          <div
             href="#contact"
             className="block py-2 bg-primary text-white px-4 rounded"
           >
             Contact Us
-          </Link>
+          </div>
         </div>
       )}
       {isModalOpen && (

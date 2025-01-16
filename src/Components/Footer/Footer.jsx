@@ -72,33 +72,33 @@ const Footer = () => {
                 Follow us on social media
               </h1>
               <div className="flex xsm:justify-center sm:justify-center md:justify-center w-full">
-                <a
+                {/* <a
                   href="https://www.facebook.com/share/1E5UTzoWjW/?mibextid=LQQJ4d"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                > */}
                   <div>
                     <FaFacebook size={25} />
                   </div>
-                </a>
-                <a
+                {/* </a> */}
+                {/* <a
                   href="https://www.instagram.com/isomedsofficial/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                > */}
                   <div>
                     <CgInstagram size={25} className="mx-8" />
                   </div>
-                </a>
-                <a
+                {/* </a> */}
+                {/* <a
                   href="https://www.linkedin.com/company/isomeds-pharmacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
+                > */}
                   <div>
                     <FaYoutube size={25} />
                   </div>
-                </a>
+                {/* </a> */}
                 {/* <img src="/icons/yt.svg" className="h-10 w-10 xsm:h-6 xsm:w-6 sm:h-6 sm:w-6" />
             <img src="/icons/youtube.svg" className="h-10 w-10 xsm:h-6 xsm:w-6 sm:h-6 sm:w-6" /> */}
               </div>
