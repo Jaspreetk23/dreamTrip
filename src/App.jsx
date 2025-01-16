@@ -1,7 +1,4 @@
-"use client";
 import { useEffect, useState } from "react";
-// import div from "next/div";
-// import Image from "next/image";
 
 
 const App = () => {
@@ -36,7 +33,7 @@ const App = () => {
             alt="Logo"
             // width={80}
             // height={30}
-            // className="w-auto h-10"
+            className="w-auto h-10"
           />
         </div>
 
