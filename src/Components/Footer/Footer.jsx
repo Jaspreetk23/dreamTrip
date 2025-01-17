@@ -1,106 +1,73 @@
-import "./footer.css";
-import { IoMdCall, IoMdMail } from "react-icons/io";
-import { FaFacebook, FaLocationDot, FaYoutube } from "react-icons/fa6";
 import { CgInstagram } from "react-icons/cg";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { IoMdCall, IoMdMail } from "react-icons/io";
 
 const Footer = () => {
-  // const navigate = useNavigate();
   return (
-    <div className="bg-secondary pt-10 px-16  text-white w-full xsm:px-4 xsm:p-4 sm:px-4 font-jost">
+    <div className="bg-secondary pt-10 px-16 text-white w-full font-jost xsm:px-4 xsm:p-4 sm:px-4">
       <div className="w-full flex justify-between xsm:flex-col sm:flex-col md:flex-col">
-        <div className="w-[35%] xsm:w-full sm:w-full md:w-full">
-          <div className=" flex-col">
-            <div className="">
-              <img
-                src="/images/logo.png"
-                alt="logo"
-                height={100}
-                width={100}
-                className="w-40 h-16 xsm:w-32 sm:w-28 xsm:mx-auto sm:h-16 md:w-32 md:h-10 lg:w-40 lg:h-16 object-contain sm:mx-auto md:mx-auto"
-              />
-              {/* <h1>right by you</h1> */}
-            </div>
-            <p className="my-6 xsm:text-xxs sm:text-xs xsm:my-2 sm:my-2 font-jost">
-              Experience luxury and comfort, where every detail is designed to
-              make your stay memorable. From exquisite dining to personalized
-              service, we are here to make your visit exceptional. Building the
-              best network where you can get all types of information to ensure
-              a seamless stay.
-            </p>{" "}
+        {/* Logo Section */}
+        <div className="w-[35%] flex flex-col gap-2 xsm:w-full sm:w-full md:w-full xsm:pb-8">
+          <div>
+            <img
+              src="/images/logo.png"
+              alt="logo"
+              className="w-40 h-20 object-contain xsm:w-32 sm:w-28 sm:h-16 md:w-32 md:h-10 lg:w-40 lg:h-20 xsm:mx-auto sm:mx-auto md:mx-auto"
+            />
           </div>
+          <p className="my-6 text-justify text-xl font-bold lg:text-base md:text-xs md:w-[80%] sm:text-[10px] sm:leading-none xsm:text-[10px] xsm:leading-none xsm:w-[80%]">
+            Experience luxury and comfort, where every detail is designed to
+            make your stay memorable. From exquisite dining to personalized
+            service, we are here to make your visit exceptional. Building the
+            best network where you can get all types of information to ensure a
+            seamless stay.
+          </p>
         </div>
-        <div className="w-[60%] flex justify-items-end mt-6 xsm:w-full sm:w-full xsm:mt-4 md:w-full md:mt-12">
-          <div className="w-[50%] data xsm:hidden sm:hidden">
-            <h1 className="mb-4 font-[700] text-2xl">Company</h1>
-            <div>
-              {/* <</button> */}
-              <button className="mt-3">Terms & Conditions</button>
-              <button className="mt-3">Privacy Policy</button>
-              <button className="mt-3">About Us</button>
-              {/*  <3'>Sales</button> */}
+
+        {/* Links and Contact Section */}
+        <div className="w-[50%] flex justify-items-end mt-6 xsm:w-full sm:w-full xsm:mt-4 md:w-full md:mt-12">
+          <div className="w-[50%] flex flex-col gap-8 xsm:hidden sm:hidden">
+            <h2 className="text-xl font-bold lg:text-xl md:text-sm sm:text-xs xsm:text-[10px] text-left">
+              Company
+            </h2>
+            <div className="flex flex-col gap-4 lg:gap-3 md:gap-2 sm:gap-2 xsm:gap-2">
+              <button className="text-lg lg:text-base md:text-xs sm:text-[10px] xsm:text-[9px] text-left">
+                Terms & Conditions
+              </button>
+              <button className="text-lg lg:text-base md:text-xs sm:text-[10px] xsm:text-[9px] text-left">
+                Privacy Policy
+              </button>
+              <button className="text-lg lg:text-base md:text-xs sm:text-[10px] xsm:text-[9px] text-left">
+                About Us
+              </button>
             </div>
           </div>
-          <div className="w-[60%] data2 xsm:w-[90%] sm:w-[90%] xsm:mx-auto sm:mx-auto">
-            <h1 className="font-[700] xsm:text-sm sm:text-sm xsm:text-center sm:text-center text-2xl">
+
+          <div className="w-[60%] flex flex-col gap-10 xsm:w-[90%] sm:w-[90%] xsm:mx-auto sm:mx-auto lg:gap-8 md:gap-6 sm:gap-4 xsm:gap-4">
+            <h3 className="text-xl font-bold lg:text-xl md:text-sm sm:text-xs xsm:text-[10px] xsm:text-center sm:text-center md:text-center">
               Contact Us
-            </h1>
-            <div className="content">
-              <div>
-                <div>
-                  <FaLocationDot size={20} />
-                </div>
-                <p className="xsm:text-xxs sm:text-xxs">
-                  123 Luxury Lane, Dream City, Country
-                </p>
+            </h3>
+            <div className="flex flex-col gap-6 lg:gap-3 md:gap-2 sm:gap-2 xsm:gap-2">
+              <div className="flex gap-4 items-center lg:gap-3 md:gap-2 sm:gap-1 xsm:gap-1">
+                <FaLocationDot size={20} />
+                <p className="xsm:text-xxs sm:text-xxs">123 Luxury Lane, Dream City, Country</p>
               </div>
-              <div className="mb-4 xsm:justify-center">
-                <div className="flex">
-                  <div>
-                    <IoMdMail size={20} />
-                  </div>
-                  <p className="xsm:text-xxs sm:text-xxs">info@almaris.in</p>
-                </div>
-                <div>
-                  <IoMdCall
-                    className="bg-white text-secondary rounded-full p-1 ml-8"
-                    size={20}
-                  />
-                  <p className="xsm:text-xxs sm:text-xxs">7896541230</p>
-                </div>
+              <div className="flex gap-4 items-center lg:gap-3 md:gap-2 sm:gap-1 xsm:gap-1">
+                <IoMdMail size={20} />
+                <p className="xsm:text-xxs sm:text-xxs">info@almaris.in</p>
               </div>
-              <h1 className="font-[600] pb-2 xsm:text-sm sm:text-sm xsm:text-center sm:text-center md:text-center text-xl">
+              <div className="flex gap-4 items-center lg:gap-3 md:gap-2 sm:gap-1 xsm:gap-1">
+                <IoMdCall className="bg-white text-secondary rounded-full p-1" size={20} />
+                <p className="xsm:text-xxs sm:text-xxs">7896541230</p>
+              </div>
+              <h3 className="font-semibold text-xl lg:text-base md:text-sm sm:text-xs xsm:text-[10px] xsm:text-center sm:text-center md:text-center">
                 Follow us on social media
-              </h1>
-              <div className="flex xsm:justify-center sm:justify-center md:justify-center w-full">
-                {/* <a
-                  href="https://www.facebook.com/share/1E5UTzoWjW/?mibextid=LQQJ4d"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                > */}
-                  <div>
-                    <FaFacebook size={25} />
-                  </div>
-                {/* </a> */}
-                {/* <a
-                  href="https://www.instagram.com/isomedsofficial/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                > */}
-                  <div>
-                    <CgInstagram size={25} className="mx-8" />
-                  </div>
-                {/* </a> */}
-                {/* <a
-                  href="https://www.linkedin.com/company/isomeds-pharmacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                > */}
-                  <div>
-                    <FaYoutube size={25} />
-                  </div>
-                {/* </a> */}
-                {/* <img src="/icons/yt.svg" className="h-10 w-10 xsm:h-6 xsm:w-6 sm:h-6 sm:w-6" />
-            <img src="/icons/youtube.svg" className="h-10 w-10 xsm:h-6 xsm:w-6 sm:h-6 sm:w-6" /> */}
+              </h3>
+              <div className="flex gap-4 xsm:justify-center sm:justify-center md:justify-center">
+                <FaFacebook size={25} />
+                <CgInstagram size={25} />
+                <FaYoutube size={25} />
               </div>
             </div>
           </div>
