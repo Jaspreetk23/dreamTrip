@@ -42,7 +42,7 @@ const Header = () => {
         </div>
 
         {/* Navbar */}
-        <nav
+        <div
           className={`xsm:hidden sm:hidden flex gap-6 ${
             isHeaderVisible ? "text-white" : "text-black"
           }`}
@@ -55,7 +55,7 @@ const Header = () => {
           </div>
           <div className="cursor-pointer hover:text-gray-400">Hotels</div>
           <div className="cursor-pointer hover:text-gray-400">Resorts</div>
-        </nav>
+        </div>
 
         {/* Login Button */}
         <div className="xsm:hidden sm:hidden block">
@@ -90,7 +90,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black bg-opacity-75 text-white p-4">
+        <div className="hidden xsm:b;lock sm:block bg-black bg-opacity-75 text-white p-4">
           <div
             className="py-2 cursor-pointer"
             onClick={() => {
