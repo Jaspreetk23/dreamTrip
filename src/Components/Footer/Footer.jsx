@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="w-1/3 flex flex-col gap-2 xsm:w-full sm:w-full md:w-full xsm:pb-8">
           <div>
             <img
-              src="/images/logo.png"
+              src="/public/images/logo.png"
               alt="logo"
               className="w-40 h-20 object-contain xsm:w-32 sm:w-28 sm:h-16 md:w-32 md:h-10 lg:w-40 lg:h-20 xsm:mx-auto sm:mx-auto md:mx-auto"
             />

@@ -32,7 +32,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
-            src="/images/logo.png"
+            src="/public/images/logo.png"
             alt="Logo"
             width={80}
             height={30}

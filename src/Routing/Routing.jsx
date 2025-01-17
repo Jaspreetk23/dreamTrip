@@ -10,7 +10,6 @@ const Routing = () => {
       <div className="min-h-screen">
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          <Route path="/footer" element={<Footer />} />
         </Routes>
       </div>
       <Footer />
