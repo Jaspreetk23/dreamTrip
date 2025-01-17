@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="bg-secondary pt-10 px-16 text-white w-full font-jost xsm:px-4 xsm:p-4 sm:px-4">
       <div className="w-full flex justify-between xsm:flex-col sm:flex-col md:flex-col">
         {/* Logo Section */}
-        <div className="w-[35%] flex flex-col gap-2 xsm:w-full sm:w-full md:w-full xsm:pb-8">
+        <div className="w-1/3 flex flex-col gap-2 xsm:w-full sm:w-full md:w-full xsm:pb-8">
           <div>
             <img
               src="/images/logo.png"
@@ -26,8 +26,8 @@ const Footer = () => {
         </div>
 
         {/* Links and Contact Section */}
-        <div className="w-[50%] flex justify-items-end mt-6 xsm:w-full sm:w-full xsm:mt-4 md:w-full md:mt-12">
-          <div className="w-[50%] flex flex-col gap-8 xsm:hidden sm:hidden">
+        <div className="w-1/2 flex justify-items-end mt-6 xsm:w-full sm:w-full xsm:mt-4 md:w-full md:mt-12">
+          <div className="w-1/2 flex flex-col gap-8 xsm:hidden sm:hidden">
             <h2 className="text-xl font-bold lg:text-xl md:text-sm sm:text-xs xsm:text-[10px] text-left">
               Company
             </h2>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="w-[60%] flex flex-col gap-10 xsm:w-[90%] sm:w-[90%] xsm:mx-auto sm:mx-auto lg:gap-8 md:gap-6 sm:gap-4 xsm:gap-4">
+          <div className="w-1/2 flex flex-col gap-10 xsm:w-[90%] sm:w-[90%] xsm:mx-auto sm:mx-auto lg:gap-8 md:gap-6 sm:gap-4 xsm:gap-4">
             <h3 className="text-xl font-bold lg:text-xl md:text-sm sm:text-xs xsm:text-[10px] xsm:text-center sm:text-center md:text-center">
               Contact Us
             </h3>

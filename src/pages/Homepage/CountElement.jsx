@@ -58,11 +58,11 @@ function CountElement({ trustedData }) {
 
   return (
     <div
-      className={`bg-cover h-64 pt-28 w-[100%] flex ml-auto mb-8 xsm:h-40 xsm:pt-0 xsm:bg-contain xsm:bg-no-repeat small:h-44 small:mt-0 small:pt-0 xsm:mt-0 small:bg-contain small:bg-no-repeat`}
+      className={`bg-cover h-64 pt-28 w-[100%] flex ml-auto mb-8 xsm:h-40 xsm:pt-0 xsm:bg-contain xsm:bg-no-repeat sm:h-44 sm:mt-0 sm:pt-0 xsm:mt-0 sm:bg-contain sm:bg-no-repeat md:pt-12 md:h-60`}
       style={{ backgroundImage: `url('/images/herosection/CountElement/bgImg.png)` }}
     >
       {/* Desktop View */}
-      <div className="xsm:hidden small:hidden flex justify-between w-[80%] mx-auto items-center">
+      <div className="xsm:hidden sm:hidden flex justify-between w-[80%] mx-auto items-center">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
             <img
@@ -70,12 +70,12 @@ function CountElement({ trustedData }) {
               alt=""
               height={50}
               width={50}
-              className="mb-4 mid:h-10"
+              className="mb-4 md:h-10"
             />
-            <div className="mb-4 text-[#252B42] text-[24px] font-[700] font-inter mid:text-base">
+            <div className="mb-4 text-[#252B42] text-[24px] font-[700] font-inter md:text-base">
               {item.count}+
             </div>
-            <div className="mb-4 text-[#737373] text-[14px] font-[400] font-inter mid:text-base">
+            <div className="mb-4 text-[#737373] text-[14px] font-[400] font-inter md:text-base">
               {item.label}
             </div>
           </div>
@@ -83,7 +83,7 @@ function CountElement({ trustedData }) {
       </div>
 
       {/* Mobile View Carousel */}
-      <div className="block mid:hidden lg:hidden xl:hidden 2xl:hidden w-[90%] mx-auto">
+      <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden w-[90%] mx-auto">
         <Carousel
           responsive={responsive}
           infinite={true}
@@ -97,19 +97,19 @@ function CountElement({ trustedData }) {
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center small:mt-6 xsm:mt-10 xsm:mb-7 small:mb-7"
+              className="flex flex-col items-center sm:mt-6 xsm:mt-10 xsm:mb-7 sm:mb-7"
             >
               <img
                 src={item.icon}
                 alt=""
                 height={50}
                 width={50}
-                className="mb-4 xsm:mb-2 xsm:h-8 small:h-10"
+                className="mb-4 xsm:mb-2 xsm:h-8 sm:h-10"
               />
-              <div className="mb-4 text-[#252B42] text-[24px] font-[700] font-inter xsm:text-sm small:text-sm">
+              <div className="mb-4 text-[#252B42] text-[24px] font-[700] font-inter xsm:text-sm sm:text-sm">
                 {item.count}+
               </div>
-              <div className="mb-4 text-[#737373] text-[14px] font-[400] font-inter xsm:text-sm small:text-sm">
+              <div className="mb-4 text-[#737373] text-[14px] font-[400] font-inter xsm:text-sm sm:text-sm">
                 {item.label}
               </div>
             </div>
