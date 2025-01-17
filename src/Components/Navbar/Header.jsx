@@ -23,7 +23,7 @@ const Header = () => {
   }, [location.pathname]);
 
   return (
-    <header
+    <div
       className={`absolute top-0 w-full z-50 ${
         isHeaderVisible ? "bg-transparent" : "bg-white"
       }`}
@@ -117,7 +117,7 @@ const Header = () => {
           <Login />
         </Modal>
       )}
-    </header>
+    </div>
   );
 };
 
