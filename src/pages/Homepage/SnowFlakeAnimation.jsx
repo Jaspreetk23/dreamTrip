@@ -20,7 +20,7 @@ const SnowflakeAnimation = () => {
     }, 5000); // Change every 5 seconds
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [images.length]);
 
   useEffect(() => {
     const generateSnowflakes = () => {
